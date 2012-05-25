@@ -1,2 +1,37 @@
 h1= title
-p Welcome to #{title}
+
+div#container-1
+  ul
+    li: a(href='#cp')
+      span Control Panel
+
+  div#cp
+    div.fragment-content
+      div
+        a(href="https://#{httphost}:12320")
+          img(src="/images/shell.png")
+          span Web Shell
+
+      div
+        a(href= "https://#{httphost}:12321")
+          img(src="/images/webmin.png")
+          span Webmin
+
+      div
+
+      div
+
+      div
+
+      h2 Resources and references
+      ul
+        li: p The official Node.js 
+          a(href="http://nodejs.org") homepage
+          span  and
+          a(href="http://nodejs.org/api/")  manual
+
+        li: p The excellent 
+          a(href="http://search.npmjs.org") NPM registry
+
+        li: a(href="http://www.turnkeylinux.org/nodejs") TurnKey Node.js release notes
+
