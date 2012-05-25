@@ -1,0 +1,23 @@
+#!/bin/sh -ex
+
+NODEAPP=/opt/tklweb-cp
+
+# setup tklweb-cp
+mkdir -p $NODEAPP/public/javascripts
+mkdir -p $NODEAPP/public/stylesheets
+mkdir -p $NODEAPP/public/images
+mv /var/www/js/* $NODEAPP/public/javascripts/
+mv /var/www/css/* $NODEAPP/public/stylesheets/
+mv /var/www/images/* $NODEAPP/public/images/
+rm -rf /var/www/{js,css,images}
+
+tar -zxf $NODEAPP/node_modules.tar.gz -C $NODEAPP
+rm $NODEAPP/node_modules.tar.gz
+
+# setup service
+cat >/etc/default/nodejs<<EOF
+# sourced by /etc/init.d/nodejs
+NODEJS_EXEC=$NODEAPP/run.sh
+EOF
+
+
