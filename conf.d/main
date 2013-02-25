@@ -11,13 +11,15 @@ mv /var/www/css/* $NODEAPP/public/stylesheets/
 mv /var/www/images/* $NODEAPP/public/images/
 rm -rf /var/www/{js,css,images}
 
-tar -zxf $NODEAPP/node_modules.tar.gz -C $NODEAPP
-rm $NODEAPP/node_modules.tar.gz
+# install deps
+[ "$FAB_HTTP_PROXY" ] && export HTTP_PROXY=$FAB_HTTP_PROXY
+cd $NODEAPP
+npm install
+unset HTTP_PROXY
 
 # setup service
 cat >/etc/default/nodejs<<EOF
 # sourced by /etc/init.d/nodejs
 NODEJS_EXEC=$NODEAPP/run.sh
 EOF
-
 
