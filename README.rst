@@ -12,12 +12,12 @@ and on top of that:
 
 - node.js configurations:
    
-   - Installed from upstream source code to /opt/tklweb-cp
+   - Installed from upstream source code in /usr/local/src/node.
    - Includes NPM, with npm-completion out of the box.
    - Includes custom nodejs initscript for running node app as daemon.
    - Includes nginx pre-configured to proxy to nodejs daemon
    - Includes TurnKey Web Control panel with links to useful references,
-     built on expressjs with jade templating.
+     built on expressjs with jade templating (/opt/tklweb-cp).
 
 - Postfix MTA (bound to localhost) to allow sending of email (e.g.,
   password recovery).
