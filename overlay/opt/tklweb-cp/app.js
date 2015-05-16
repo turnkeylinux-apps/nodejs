@@ -4,35 +4,38 @@
  */
 
 var express = require('express')
-  , routes = require('./routes');
+  , routes = require('./routes')
+  , bodyParser = require('body-parser')
+  , methodOverride = require('method-override')
+  , errorHandler = require('errorhandler')
+  , http = require('http');
 
-var app = module.exports = express.createServer();
+var app = express();
+
+var env = process.env.NODE_ENV || 'development';
 
 // Configuration
 
-app.configure(function(){
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(express.cookieParser());
-  app.use(express.session({ secret: 'your secret here' }));
-  app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
-});
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(methodOverride());
 
-app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-});
+if (env == 'development') {
+  app.use(errorHandler({ dumpExceptions: true, showStack: true }));
+}
 
-app.configure('production', function(){
-  app.use(express.errorHandler());
-});
+if (env == 'production') {
+  app.use(errorHandler());
+}
 
 // Routes
 
 app.get('/', routes.index);
 
-app.listen(8000, function(){
-  console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+app.use(express.static(__dirname + '/public'));
+
+var server = http.createServer(app);
+server.listen(8000, function(){
+  console.log("Express server listening on %s in %s mode", server.address().address, app.settings.env);
 });
