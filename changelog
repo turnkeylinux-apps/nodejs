@@ -1,3 +1,19 @@
+turnkey-nodejs-14.0 (1) turnkey; urgency=low
+
+  * Latest upstream version of NodeJS.
+
+  * NodeJS uses:
+
+    - Jade v1.9.x
+    - Express v4.x.x
+
+  * tkl-webcp code changed to keep up with new APIs of Jade and Express.
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Anton Pyrogovskyi <q@dae.pp.ua>  Sat, 16 May 2015 18:39:23 +0300
+
 turnkey-nodejs-13.0 (1) turnkey; urgency=low
 
   * Latest upstream version of NodeJS.
