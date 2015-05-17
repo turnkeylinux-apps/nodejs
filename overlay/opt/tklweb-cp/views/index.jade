@@ -1,6 +1,8 @@
+extends layout
+
 h1= title
 
-div#container-1
+block container-1
   ul
     li: a(href='#cp')
       span Control Panel
@@ -26,12 +28,11 @@ div#container-1
       h2 Resources and references
       ul
         li: p The official Node.js 
-          a(href="http://nodejs.org") homepage
-          span  and
+          a(href="http://nodejs.org")  homepage 
+          span  and 
           a(href="http://nodejs.org/api/")  manual
 
         li: p The excellent 
-          a(href="http://search.npmjs.org") NPM registry
+          a(href="https://www.npmjs.com/")  NPM registry
 
         li: a(href="http://www.turnkeylinux.org/nodejs") TurnKey Node.js release notes
-

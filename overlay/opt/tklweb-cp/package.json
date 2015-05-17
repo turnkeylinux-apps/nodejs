@@ -3,7 +3,10 @@
   , "version": "0.0.1"
   , "private": true
   , "dependencies": {
-      "express": "2.5.8"
-    , "jade": ">= 0.0.1"
+      "express": "4.x.x"
+    , "jade": "1.9.x"
+    , "body-parser": ">= 0.0.1"
+    , "method-override": ">= 0.0.1"
+    , "errorhandler": ">= 0.0.1"
   }
 }
