@@ -1,7 +1,0 @@
-#!/bin/sh -ex
-
-# nodejs service
-adduser --system --disabled-login --group nodejs
-update-rc.d -f nodejs defaults || true
-touch /var/log/nodejs.log
-chown nodejs:nodejs /var/log/nodejs.log
