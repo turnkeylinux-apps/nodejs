@@ -1,3 +1,6 @@
 #include <turnkey/base>
-#include <turnkey/nodejs>
 
+ca-certificates
+openssl
+
+nginx
