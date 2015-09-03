@@ -5,8 +5,3 @@ adduser --system --disabled-login --group nodejs
 update-rc.d -f nodejs defaults || true
 touch /var/log/nodejs.log
 chown nodejs:nodejs /var/log/nodejs.log
-
-# nginx
-rm -f /etc/nginx/sites-enabled/default
-ln -s /etc/nginx/sites-available/nodejs /etc/nginx/sites-enabled/nodejs
-
