@@ -2,7 +2,7 @@
 
 # install n node version manager
 cd /usr/local/src
-git-clone https://github.com/tj/n
+git clone https://github.com/tj/n
 cd n && make install
 
 # install latest stable node
