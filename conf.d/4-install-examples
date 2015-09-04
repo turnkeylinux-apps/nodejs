@@ -1,0 +1,17 @@
+#!/bin/bash -ex
+
+EXAMPLES=/opt/node-examples
+
+mkdir -p $EXAMPLES
+cd $EXAMPLES
+
+git clone https://github.com/Hendrik/node-by-example
+git clone https://github.com/shapeshed/express_example
+git clone https://github.com/shapeshed/nodejsbook.io.examples
+git clone https://github.com/azat-co/practicalnode
+
+cd practicalnode
+rm -rf .git
+rm -rf $(find -type d -name node_modules)
+
+chown -R node:node $EXAMPLES
