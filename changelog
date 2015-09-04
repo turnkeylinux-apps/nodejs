@@ -1,5 +1,26 @@
 turnkey-nodejs-14.0 (1) turnkey; urgency=low
 
+  * install latest node using n version manager.
+  * /etc/skel configuration to support for installing npm packages globally
+    more securely without root or sudo root.
+  * systemd pm2 service running as user node. pm2 runs tklweb-cp "control panel".
+  * added several hundred node code examples to /opt/node-examples/
+  * improved index, link to awesome curated node.js list
+  * bundled global installations of especially important Node.js packages
+
+    - pm2
+    - forever
+    - node-inspector
+    - grunt
+    - bower
+    - nsp
+
+  * improved default nginx configuration template.
+
+ -- Liraz Siri <liraz@turnkeylinux.org>  Fri, 04 Sep 2015 05:40:23 +0300
+
+turnkey-nodejs-14.0-rc (1) turnkey; urgency=low
+
   * Latest upstream version of NodeJS.
 
   * NodeJS uses:
