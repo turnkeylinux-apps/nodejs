@@ -1,7 +1,6 @@
 #!/bin/sh -ex
 
 NODEAPP=/opt/tklweb-cp
-NODEAPP_USER=nodeapp
 
 # setup tklweb-cp
 mkdir -p $NODEAPP/public/javascripts
@@ -12,7 +11,7 @@ mv /var/www/css/* $NODEAPP/public/stylesheets/
 mv /var/www/images/* $NODEAPP/public/images/
 rm -rf /var/www/{js,css,images}
 
-chown -R $NODEAPP_USER:$NODEAPP_USER $NODEAPP
+chown -R node:node $NODEAPP
 
 # install deps
 [ "$FAB_HTTP_PROXY" ] && export HTTP_PROXY=$FAB_HTTP_PROXY
@@ -20,4 +19,4 @@ cd $NODEAPP
 su $NODEAPP_USER -c "npm install"
 unset HTTP_PROXY
 
-su $NODEAPP_USER -c "pm2 start tklweb-cp.js; pm2 dump; pm2 kill"
+su node -c "pm2 start tklweb-cp.js; pm2 dump; pm2 kill"
