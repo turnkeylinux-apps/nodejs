@@ -106,4 +106,4 @@ Credentials *(passwords set at first boot)*
 .. _Chrome devtools: https://developer.chrome.com/devtools
 .. _installing npm packages globally: https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 .. _Node.js: https://nodejs.org/
-.. _TurnKey Core: http://www.turnkeylinux.org/core
+.. _TurnKey Core: https://www.turnkeylinux.org/core
