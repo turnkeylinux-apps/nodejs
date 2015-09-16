@@ -10,7 +10,7 @@ of open source libraries in the world.
 This appliance includes all the standard features in `TurnKey Core`_,
 and on top of that:
 
-- Node.js configurations:
+-  Node.js configurations:
 
    - `n`_ Node Version Manager used to install the latest stable version of
      Node. `n`_ supports updating Node to the latest version and switching between
