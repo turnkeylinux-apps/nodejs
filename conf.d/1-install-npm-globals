@@ -1,7 +1,0 @@
-#!/bin/bash -ex
-
-GLOBALS="bower pm2 forever node-inspector grunt grunt-cli nsp"
-
-for package in $GLOBALS; do
-	npm install -g $package
-done

@@ -1,0 +1,37 @@
+#!/bin/bash -ex
+
+USER=node
+NODEAPP=/opt/tklweb-cp
+EXAMPLES=/opt/node-examples
+
+# setup tklweb-cp
+mkdir -p $NODEAPP/public/javascripts
+mkdir -p $NODEAPP/public/stylesheets
+mkdir -p $NODEAPP/public/images
+mv /var/www/js/* $NODEAPP/public/javascripts/
+mv /var/www/css/* $NODEAPP/public/stylesheets/
+mv /var/www/images/* $NODEAPP/public/images/
+rm -rf /var/www/{js,css,images}
+
+chown -R $USER:$USER $NODEAPP
+
+# install deps
+su $USER -lc "[ "$FAB_HTTP_PROXY" ] && export HTTP_PROXY=$FAB_HTTP_PROXY; cd $NODEAPP && npm install"
+
+su node -lc "cd $NODEAPP && pm2 start tklweb-cp.js; sleep 5; pm2 dump; pm2 kill"
+
+# install examples
+mkdir -p $EXAMPLES
+cd $EXAMPLES
+
+for i in Hendrik/node-by-example shapeshed/express_example shapeshed/nodejsbook.io.examples azat-co/practicalnode; do
+    git clone "https://github.com/$i.git"
+done
+
+cd practicalnode
+rm -rf .git
+find -type d -name node_modules -exec rm -rf \{} \+
+
+chown -R $USER:$USER $EXAMPLES
+
+rm -rf /tmp/npm*

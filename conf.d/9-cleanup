@@ -1,3 +1,0 @@
-#!/bin/bash -ex
-
-rm -rf /tmp/npm*
