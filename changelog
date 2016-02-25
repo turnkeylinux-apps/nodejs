@@ -1,3 +1,12 @@
+turnkey-nodejs-14.1 (1) turnkey; urgency=low
+
+  * Updated to latest stable Nodejs [#477].
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Jeremy Davis <root@turnkeylinux.org>  Thu, 25 Feb 2016 11:30:56 +1100
+
 turnkey-nodejs-14.0 (1) turnkey; urgency=low
 
   * install latest node using n version manager.
