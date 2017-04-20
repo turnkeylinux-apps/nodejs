@@ -1,3 +1,14 @@
+turnkey-nodejs-14.2 (1) turnkey; urgency=low
+
+  * Updated NodeJS to latest LTS.
+
+  * Installed security updates.
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 20 Apr 2017 14:25:34 +1000
+
 turnkey-nodejs-14.1 (1) turnkey; urgency=low
 
   * Updated to latest stable Nodejs [#477].
