@@ -34,4 +34,9 @@ find -type d -name node_modules -exec rm -rf \{} \+
 
 chown -R $USER:$USER $EXAMPLES
 
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/nodejs /etc/nginx/sites-enabled/nodejs
+
+update-rd.d pm2 defaults
+
 rm -rf /tmp/npm*
