@@ -1,4 +1,4 @@
-COMMON_OVERLAYS = tkl-webcp
+COMMON_OVERLAYS = tkl-webcp nodejs-pm2
 COMMON_CONF = tkl-webcp
 
 include $(FAB_PATH)/common/mk/turnkey/nodejs.mk
