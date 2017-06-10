@@ -17,9 +17,5 @@ ln -s $PM2_LOG/pm2.log $PM2_PATH/pm2.log
 
 chown -R $USER:$USER $PM2_PATH $PM2_LOG
 
-rm -f /etc/nginx/sites-enabled/default
-ln -s /etc/nginx/sites-available/nodejs /etc/nginx/sites-enabled/nodejs
-
 update-rc.d pm2 defaults
 
-rm -rf /tmp/npm*
