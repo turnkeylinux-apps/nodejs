@@ -73,7 +73,6 @@ and on top of that:
   - `forever`_: a simple CLI tool for ensuring a node app runs continuously.
     Supports watching sources for changes and restarting app.
 
-  - `node-inspector`_: a powerful debugger modeled after `Chrome devtools`_.
   - `grunt`_: task runner that automates repetitive tasks like minifcation,
     compilation, unit testing and linting.
   - `bower`_: package manager for client-side browser dependencies
