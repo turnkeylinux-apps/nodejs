@@ -11,7 +11,6 @@ turnkey-nodejs-15.0 (1) turnkey; urgency=low
 
  -- Zhenya Hvorostian <zhenya@turnkeylinux.org>  Tue, 06 Feb 2018 03:35:10 +0300
 
-
 turnkey-nodejs-14.2 (1) turnkey; urgency=low
 
   * Updated NodeJS to latest LTS.
