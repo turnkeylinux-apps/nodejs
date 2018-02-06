@@ -97,7 +97,6 @@ Credentials *(passwords set at first boot)*
 .. _n: https://github.com/tj/n
 .. _PM2: https://github.com/Unitech/pm2
 .. _forever: https://github.com/foreverjs/forever
-.. _node-inspector: https://github.com/node-inspector/node-inspector
 .. _grunt: http://gruntjs.com/
 .. _bower: http://bower.io/
 .. _nsp: https://github.com/nodesecurity/nsp
