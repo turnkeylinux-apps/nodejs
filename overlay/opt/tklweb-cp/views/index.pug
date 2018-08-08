@@ -1,6 +1,7 @@
 extends layout
 
-h1= title
+block title-block
+  h1= title
 
 block container-1
   ul
@@ -10,12 +11,12 @@ block container-1
   div#cp
     div.fragment-content
       div
-        a(href="https://#{httphost}:12320")
+        a(href=`https://${httphost}:12320`)
           img(src="/images/shell.png")
           span Web Shell
 
       div
-        a(href= "https://#{httphost}:12321")
+        a(href= `https://${httphost}:12321`)
           img(src="/images/webmin.png")
           span Webmin
 
