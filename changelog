@@ -2,6 +2,13 @@ turnkey-nodejs-15.0 (1) turnkey; urgency=low
 
   * Updated NodeJS to latest LTS.
 
+  * Changed npm packages:
+
+    - removed bower - deprecated.
+    - removed nsp - functionality merged into npm itself.
+    - removed jade - replaced by pug (same thing, different name)
+    [ Stefan Davis ]
+
   * Removed node-inspector.
 
   * Installed security updates.

@@ -31,6 +31,15 @@ and on top of that:
         su node
         npm install -g package
 
+   - npm now supports security `audit`_ (replaces nsp). Provides subcommand
+     fix, to automatically install compatible updates to vulnerable
+     dependencies. E.g.::
+
+        su node
+        cd /opt/your-awesome-node-app
+        npm audit
+        npm audit fix
+
    - systemd `PM2`_ service at /etc/systemd/system/pm2-node.service runs
      node apps on boot. 
      
@@ -63,7 +72,7 @@ and on top of that:
         express_example  node-by-example  nodejsbook.io.examples  practicalnode
 
    - Default web page / control panel at /opt/tklweb-cp is itself an example
-     Node.js app built with express and jade templating. 
+     Node.js app built with express and `pug`_ templating. 
 
 - Bundled globally-installed Node.js packages:
 
@@ -75,12 +84,6 @@ and on top of that:
 
   - `grunt`_: task runner that automates repetitive tasks like minifcation,
     compilation, unit testing and linting.
-  - `bower`_: package manager for client-side browser dependencies
-  - `nsp`_: Node Security Project package auditor. Audits dependencies
-    for known security vulnerabilities::
-
-        cd /opt/yournodeapp
-        nsp audit-package
 
 - Postfix MTA (bound to localhost) to allow sending of email (e.g.,
   password recovery).
@@ -93,15 +96,14 @@ Credentials *(passwords set at first boot)*
 -  Webmin, SSH: username **root**
 
 .. _npm: https://www.npmjs.com/
-
 .. _n: https://github.com/tj/n
 .. _PM2: https://github.com/Unitech/pm2
 .. _forever: https://github.com/foreverjs/forever
-.. _grunt: http://gruntjs.com/
-.. _bower: http://bower.io/
-.. _nsp: https://github.com/nodesecurity/nsp
+.. _grunt: https:///gruntjs.com/
+.. _pug: https://pugjs.org/
 
 .. _Chrome devtools: https://developer.chrome.com/devtools
 .. _installing npm packages globally: https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+.. _audit: https://docs.npmjs.com/getting-started/running-a-security-audit
 .. _Node.js: https://nodejs.org/
 .. _TurnKey Core: https://www.turnkeylinux.org/core
