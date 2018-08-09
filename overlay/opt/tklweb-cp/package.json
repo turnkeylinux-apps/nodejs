@@ -1,10 +1,10 @@
 {
     "name": "tklweb-cp"
-  , "version": "0.0.1"
+  , "version": "0.0.2"
   , "private": true
   , "dependencies": {
       "express": "4.x.x"
-    , "jade": "1.9.x"
+    , "pug": "2.x.x"
     , "body-parser": ">= 0.0.1"
     , "method-override": ">= 0.0.1"
     , "errorhandler": ">= 0.0.1"
