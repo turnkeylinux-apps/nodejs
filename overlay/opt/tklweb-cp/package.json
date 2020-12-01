@@ -1,9 +1,9 @@
 {
     "name": "tklweb-cp"
-  , "version": "0.0.2"
+  , "version": "0.0.3"
   , "private": true
   , "dependencies": {
-      "express": "4.x.x"
+      "express": ">=4.5.0"
     , "pug": "2.x.x"
     , "body-parser": ">= 0.0.1"
     , "method-override": ">= 0.0.1"
