@@ -1,3 +1,14 @@
+turnkey-nodejs-16.1 (1) turnkey; urgency=low
+
+  * Updated NodeJS to latest LTS v14.15.1.
+
+  * Change TKLweb-CP "example app" depend on express>=4.5.0 (<4.5.0 has
+    security issues) - closes #1542.
+
+  * Updated base Debian components to latest Buster (10.6).
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Wed, 02 Dec 2020 13:32:32 +1100
+
 turnkey-nodejs-16.0 (1) turnkey; urgency=low
 
   * Updated NodeJS to latest LTS v12.18.3.
