@@ -73,18 +73,11 @@ and on top of that:
 
    - Default web page / control panel at /opt/tklweb-cp is itself an example
      Node.js app built with express and `pug`_ templating. 
-
-- Bundled globally-installed Node.js packages:
-
-  - `PM2`_: production process manager. Configured to start on boot as a
+   
+   - `PM2`_: production process manager. Configured to start on boot as a
     systemd service.
 
-  - `forever`_: a simple CLI tool for ensuring a node app runs continuously.
-    Supports watching sources for changes and restarting app.
-
-  - `grunt`_: task runner that automates repetitive tasks like minifcation,
-    compilation, unit testing and linting.
-
+  
 - Postfix MTA (bound to localhost) to allow sending of email (e.g.,
   password recovery).
 
@@ -98,12 +91,8 @@ Credentials *(passwords set at first boot)*
 .. _npm: https://www.npmjs.com/
 .. _n: https://github.com/tj/n
 .. _PM2: https://github.com/Unitech/pm2
-.. _forever: https://github.com/foreverjs/forever
-.. _grunt: https:///gruntjs.com/
 .. _pug: https://pugjs.org/
 
-.. _Chrome devtools: https://developer.chrome.com/devtools
 .. _installing npm packages globally: https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
-.. _audit: https://docs.npmjs.com/getting-started/running-a-security-audit
 .. _Node.js: https://nodejs.org/
 .. _TurnKey Core: https://www.turnkeylinux.org/core
