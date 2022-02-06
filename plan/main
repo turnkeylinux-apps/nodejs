@@ -1,7 +1,2 @@
 #include <turnkey/base>
-
-build-essential # needed by node-gyp for packages with native bindings (e.g., node-inspector)
-ca-certificates
-openssl
-
-nginx
+#include <turnkey/nodejs>
