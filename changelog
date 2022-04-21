@@ -1,3 +1,14 @@
+turnkey-nodejs-17.0 (1) turnkey; urgency=low
+
+  * Updated NodeJS to latest LTS v16.13.2.
+ 
+  * Move buildcode to common. 
+ 
+  * Note: Please refer to turnkey-core's 17.0 changelog for changes common to
+    all appliances. Here we only describe changes specific to this appliance.
+
+ -- Zhenya Hvorostian <zhenya@turnkeylinux.org>  Fri, 21 Jan 2022 21:50:00 +0300
+
 turnkey-nodejs-16.1 (1) turnkey; urgency=low
 
   * Updated NodeJS to latest LTS v14.15.5.
