@@ -1,2 +1,2 @@
 #include <turnkey/base>
-#include <turnkey/nodejs>
+#include <turnkey/nodejs-nginx>
