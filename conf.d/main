@@ -16,7 +16,7 @@ find -type d -name node_modules -exec rm -rf \{} \+
 
 chown -R $USER:$USER $EXAMPLES
 
-rm -f /etc/nginx/sites-enabled/default
+rm -f /etc/nginx/sites-enabled/{,tkl-}default
 ln -s /etc/nginx/sites-available/nodejs /etc/nginx/sites-enabled/nodejs
 
 rm -rf /tmp/npm*
