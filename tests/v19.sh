@@ -67,7 +67,8 @@ NODE
 
 for example in node-by-example express_example nodejsbook.io.examples practicalnode; do
     test "$(stat -c '%U:%G' "/opt/node-examples/$example")" = node:node
-    [[ $(git -C "/opt/node-examples/$example" remote get-url origin) == \
+    [[ $(su node -s /bin/bash -c \
+        "git -C /opt/node-examples/$example remote get-url origin") == \
         https://github.com/* ]]
 done
 
