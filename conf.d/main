@@ -11,12 +11,32 @@ for i in Hendrik/node-by-example shapeshed/express_example shapeshed/nodejsbook.
 done
 
 cd practicalnode
-rm -rf .git
 find -type d -name node_modules -exec rm -rf \{} \+
 
-chown -R $USER:$USER $EXAMPLES
+chown -R node:node $EXAMPLES
+
+# Apply the per-user npm configuration to the pre-created service account.
+install -d -o node -g node /home/node/.bashrc.d
+cp /etc/skel/.npmrc /home/node/.npmrc
+cp /etc/skel/.bashrc.d/nodejs /home/node/.bashrc.d/nodejs
+cp /etc/skel/.bashrc.d/npm /home/node/.bashrc.d/npm
+chown node:node /home/node/.npmrc /home/node/.bashrc.d/{nodejs,npm}
 
 rm -f /etc/nginx/sites-enabled/{,tkl-}default
 ln -s /etc/nginx/sites-available/nodejs /etc/nginx/sites-enabled/nodejs
+
+# The inherited profile uses n while assembling the sample application.
+# Ship Debian's Trixie runtime and npm instead of the temporary upstream copy.
+rm -f /usr/local/bin/{n,node,npm,npx,corepack}
+rm -rf /usr/local/n \
+       /usr/local/src/n \
+       /usr/local/include/node \
+       /usr/local/lib/node_modules/npm \
+       /usr/local/lib/node_modules/corepack \
+       /usr/local/share/doc/node \
+       /usr/local/share/man/man1/node.1
+
+test "$(command -v node)" = /usr/bin/node
+test "$(command -v npm)" = /usr/bin/npm
 
 rm -rf /tmp/npm*
