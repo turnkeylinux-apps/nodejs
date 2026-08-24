@@ -18,6 +18,7 @@ chown -R node:node $EXAMPLES
 # Apply the per-user npm configuration to the pre-created service account.
 install -d -o node -g node /home/node/.bashrc.d
 cp /etc/skel/.npmrc /home/node/.npmrc
+echo 'cafile=/etc/ssl/certs/ca-certificates.crt' >> /home/node/.npmrc
 cp /etc/skel/.bashrc.d/nodejs /home/node/.bashrc.d/nodejs
 cp /etc/skel/.bashrc.d/npm /home/node/.bashrc.d/npm
 chown node:node /home/node/.npmrc /home/node/.bashrc.d/{nodejs,npm}
@@ -35,6 +36,7 @@ rm -rf /usr/local/n \
        /usr/local/lib/node_modules/corepack \
        /usr/local/share/doc/node \
        /usr/local/share/man/man1/node.1
+rm -f /usr/local/etc/npmrc
 
 test "$(command -v node)" = /usr/bin/node
 test "$(command -v npm)" = /usr/bin/npm

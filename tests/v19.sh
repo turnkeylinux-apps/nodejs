@@ -25,6 +25,8 @@ nginx_version=$(dpkg-query -W -f='${Version}' nginx)
 [[ $(node --version) == v20.* ]]
 test "$(su node -s /bin/bash -c 'npm config get prefix')" = \
     /home/node/.npm-packages
+test "$(su node -s /bin/bash -c 'npm config get cafile')" = \
+    /etc/ssl/certs/ca-certificates.crt
 npm audit --help >/dev/null
 test -x /etc/skel/.bashrc.d/npm
 
