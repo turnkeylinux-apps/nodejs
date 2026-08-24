@@ -38,7 +38,8 @@ rm -rf /usr/local/n \
        /usr/local/share/man/man1/node.1
 rm -f /usr/local/etc/npmrc
 
-test "$(command -v node)" = /usr/bin/node
-test "$(command -v npm)" = /usr/bin/npm
+hash -r
+dpkg-query -S "$(readlink -f "$(command -v node)")" | grep -q '^nodejs:'
+dpkg-query -S "$(readlink -f "$(command -v npm)")" | grep -q '^npm:'
 
 rm -rf /tmp/npm*

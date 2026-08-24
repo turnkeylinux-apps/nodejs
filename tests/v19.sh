@@ -15,10 +15,10 @@ trap cleanup EXIT
 systemctl --quiet is-active nginx.service pm2-node.service multi-user.target
 nginx -t
 
-test "$(command -v node)" = /usr/bin/node
-test "$(command -v npm)" = /usr/bin/npm
-dpkg-query -S /usr/bin/node | grep -q '^nodejs:'
-dpkg-query -S /usr/bin/npm | grep -q '^npm:'
+node_path=$(readlink -f "$(command -v node)")
+npm_path=$(readlink -f "$(command -v npm)")
+dpkg-query -S "$node_path" | grep -q '^nodejs:'
+dpkg-query -S "$npm_path" | grep -q '^npm:'
 node_version=$(dpkg-query -W -f='${Version}' nodejs)
 npm_version=$(dpkg-query -W -f='${Version}' npm)
 nginx_version=$(dpkg-query -W -f='${Version}' nginx)
