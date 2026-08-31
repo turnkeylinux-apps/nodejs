@@ -1,29 +1,22 @@
-Node.js - Asynchronous Javascript Framework
+Node.js - Asynchronous JavaScript Framework
 ===========================================
 
-`Node.js`_ is a cross-platform Javascript runtime environment built on Chrome's
+`Node.js`_ is a cross-platform JavaScript runtime environment built on Chrome's
 V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model
 that makes it lightweight and efficient, especially for server-side
-and networking applications. `npm`_, Nodes package ecosystem is the largest ecosystem
-of open source libraries in the world.
+and networking applications. `npm`_ is its package manager and application
+dependency update path.
 
 This appliance includes all the standard features in `TurnKey Core`_,
 and on top of that:
 
 -  Node.js configurations:
 
-   - `n`_ Node Version Manager used to install the latest stable version of
-     Node. `n`_ supports updating Node to the latest version and switching between
-     multiple older versions::
+   - Node.js 20 and npm installed from Debian Trixie and maintained through
+     APT::
 
-        # install latest stable node
-        n stable
-
-        # show all installable versions
-        n list
-
-        # install specific version
-        n <version>
+        apt update
+        apt install --only-upgrade nodejs npm
 
    - Support for `installing npm packages globally`_ more securely
      without root or sudo::
@@ -40,8 +33,11 @@ and on top of that:
         npm audit
         npm audit fix
 
-   - systemd `PM2`_ service at /etc/systemd/system/pm2-node.service runs
-     node apps on boot. 
+   - A systemd `PM2`_ service at ``/etc/systemd/system/pm2-node.service`` runs
+     Node.js applications on boot. PM2 is installed from npm and can be
+     updated through npm::
+
+        npm install --global pm2@latest
      
      pm2 is a production process manager that helps keep your node apps
      running, supports clustering and makes it easy to manage node
@@ -66,10 +62,13 @@ and on top of that:
         $ npm in<tab>
         info     init     install
 
-   - hundreds of node example apps::
+   - Node.js example applications, retained as Git checkouts so they can be
+     refreshed from their upstream repositories::
 
         $ ls /opt/node-examples
         express_example  node-by-example  nodejsbook.io.examples  practicalnode
+
+        $ git -C /opt/node-examples/express_example pull --ff-only
 
    - Default web page / control panel at /opt/tklweb-cp is itself an example
      Node.js app built with express and `pug`_ templating. 
@@ -89,7 +88,6 @@ Credentials *(passwords set at first boot)*
 -  Webmin, SSH: username **root**
 
 .. _npm: https://www.npmjs.com/
-.. _n: https://github.com/tj/n
 .. _PM2: https://github.com/Unitech/pm2
 .. _pug: https://pugjs.org/
 

@@ -1,2 +1,5 @@
 #include <turnkey/base>
 #include <turnkey/nodejs-nginx>
+
+nodejs                     # Debian Node.js runtime
+npm                        # Debian Node.js package manager

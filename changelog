@@ -1,3 +1,19 @@
+turnkey-nodejs-19.0 (1) turnkey; urgency=low
+
+  * Upgrade the base distribution to Debian 13/Trixie.
+
+  * Use Debian's Node.js 20 and npm packages instead of shipping a runtime
+    installed by the n version manager.
+
+  * Retain the npm-managed PM2 service and Express/Pug sample application with
+    documented npm update paths.
+
+  * Keep the bundled example applications as updateable Git checkouts.
+
+  * See the TurnKey Core 19.0 changelog for changes common to all appliances.
+
+ -- TurnKey Linux release engineering <release@turnkeylinux.org>  Mon, 24 Aug 2026 00:00:00 +0000
+
 turnkey-nodejs-18.0 (1) turnkey; urgency=low
 
   * Ensure hashfile includes URL to public key - closes #1864.
@@ -248,4 +264,3 @@ turnkey-nodejs-12.0 (1) turnkey; urgency=low
     appliances. Here we only describe changes specific to this appliance.
 
  -- Alon Swartz <alon@turnkeylinux.org>  Wed, 01 Aug 2012 08:00:00 +0200
-
